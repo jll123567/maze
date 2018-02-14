@@ -1,0 +1,77 @@
+# import
+import turtle
+
+
+# set up screen and turtle
+window = turtle.Screen()
+window.setup(640, 400, None, None)
+pen = turtle.Turtle()
+pen.ht()
+pen.pu()
+pen.speed(0)
+
+
+# maze draw
+def drawMaze():
+    pen.goto(-300, 180)
+    pen.pd()
+    pen.goto(-300, -180)
+    pen.pu()
+    pen.goto(-280, 160)
+    pen.pd()
+    pen.goto(-280, 80)
+    pen.pu()
+    pen.goto(-280, 40)
+    pen.pd()
+    pen.goto(-280, -60)
+    pen.pu()
+    pen.goto(-280, -80)
+    pen.pd()
+    pen.goto(-280, -120)
+    pen.pu()
+    pen.goto(-260, 140)
+    pen.pd()
+    pen.goto(-260, 100)
+    pen.pu()
+    pen.goto(-260, 20)
+    pen.pd()
+    pen.goto(-260, -60)
+    pen.pu()
+    pen.goto(-260, -80)
+    pen.pd()
+    pen.goto(-260, -180)
+    pen.pu()
+    pen.goto(-240, 0)
+    pen.pd()
+    pen.goto(-240, -60)
+    pen.pu()
+    pen.goto(-240, -40)
+    pen.pd()
+    pen.goto(-240, -60)
+    pen.pu()
+    pen.goto(-240, -80)
+    pen.pd()
+    pen.goto(-240, -100)
+    pen.pu()
+    pen.goto(-240, -120)
+    pen.pd()
+    pen.goto(-240, -160)
+    pen.pu()
+    pen.goto(-220, -20)
+    pen.pd()
+    pen.goto(-220, -60)
+    pen.pu()
+    pen.goto(-220, -80)
+    pen.pd()
+    pen.goto(-220, -100)
+    pen.pu()
+    pen.goto(-220, -120)
+    pen.pd()
+    pen.goto(-220, -160)
+
+
+drawMaze()
+
+
+# screen loop
+window.mainloop()
