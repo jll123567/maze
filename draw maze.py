@@ -1,7 +1,6 @@
 # import
 import turtle
 
-
 # set up screen and turtle
 window = turtle.Screen()
 window.setup(640, 400, None, None)
@@ -68,10 +67,23 @@ def drawMaze():
     pen.goto(-220, -120)
     pen.pd()
     pen.goto(-220, -160)
+    pen.pu()
+    pen.goto(-200, 0)
+    pen.pd()
+    pen.goto(-200, -160)
+    pen.pu()
+    pen.goto(-180, 40)
+    pen.pd()
+    pen.goto(-180, 20)
+    pen.pu()
+    pen.goto(-180, 20)
+    pen.pu()
+    pen.goto(-180, 0)
+    pen.pd()
+    pen.goto(-180, -160)
 
 
 drawMaze()
-
 
 # screen loop
 window.mainloop()
