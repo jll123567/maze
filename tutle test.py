@@ -8,7 +8,7 @@ turt = turtle.Turtle()
 turt.speed(5)
 
 # turtle instructions
-for _ in range(0,10):
+for _ in range(0, 10):
     for _ in range(0, 18):
         turt.forward(50)
         turt.left(20)
