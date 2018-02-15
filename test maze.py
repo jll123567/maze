@@ -119,7 +119,7 @@ while str(turt.pos()) != str(goal.pos()):
     print(str(turt.pos()) + " : " + str(goal.pos()))
     play()
 else:
-    sleep(2)
+    sleep(1)
     window.bye()
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nyou win")
     sleep(4)
