@@ -706,8 +706,9 @@ while True:
 
     # play
     play()
+    # Debug
+    # print(player.pos(), " : ", goal.pos(), " :" + str(str(player.pos()) == str(goal.pos())))
 
     # game win
-    if player.pos() == goal.pos():
+    if str(player.pos()) == str(goal.pos()):
         popupmsg("   You Won")
-        quit()
