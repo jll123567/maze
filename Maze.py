@@ -1,12 +1,32 @@
 # import
 import turtle
+import tkinter as tk
+from tkinter import ttk
 
-# set up screen
+# screen setup
 window = turtle.Screen()
 window.setup(640, 400, None, None)
 
+# player setup
+player = turtle.Turtle(shape="turtle")
+player.color("green", "green")
+player.pu()
+player.ht()
+player.speed(0)
+player.goto(290, -30)
+player.left(180)
 
-# how to draw the maze
+# goal setup
+goal = turtle.Turtle(shape="turtle")
+goal.color("red", "red")
+goal.pu()
+goal.ht()
+goal.speed(0)
+goal.goto(290, 30)
+goal.left(180)
+
+
+# draw maze instructions
 def drawMaze():
     pen = turtle.Turtle()
     pen.ht()
@@ -624,11 +644,70 @@ def drawMaze():
     pen.pu()
 
 
+# movement and player/goal ready
+def play():
+    # key binds
+    def up():
+        player.forward(20)
 
+    def left():
+        player.speed(0)
+        player.left(90)
+
+    def right():
+        player.speed(0)
+        player.right(90)
+
+    # show goal
+    goal.st()
+
+    # update player
+    player.st()
+    player.pd()
+    player.speed(2)
+
+    # Key events
+    window.onkey(up, "Up")
+    window.onkey(left, "Left")
+    window.onkey(right, "Right")
+    window.listen()
+
+
+# Font Def for popup
+NORM_FONT = ("Verdana", 12)
+
+
+# popup function
+def popupmsg(msg):
+    popup = tk.Tk()
+    sw = popup.winfo_screenwidth()
+    sh = popup.winfo_screenheight()
+    popup.wm_title("You Won!")
+    # centering help from <https://stackoverflow.com/questions/14910858/how-to-specify-where-a-tkinter-window-opens
+    # /14912644>
+    popup.geometry('%dx%d+%d+%d' % (100, 80, ((sw / 2) - 50), ((sh / 2) - 40)))
+    label = ttk.Label(popup, text=str(msg), font=("Verdana", 12))
+    label.pack(side="top", fill="x", pady=10)
+    b1 = ttk.Button(popup, text="Hurray", command=popup.quit)
+    b1.pack()
+
+    # close window
+    window.bye()
+
+    # popup mainloop
+    popup.mainloop()
 
 
 # draw the maze
 drawMaze()
 
-# screen loop
-window.mainloop()
+# game loop
+while True:
+
+    # play
+    play()
+
+    # game win
+    if player.pos() == goal.pos():
+        popupmsg("   You Won")
+        quit()
